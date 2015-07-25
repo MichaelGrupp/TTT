@@ -1,0 +1,77 @@
+%Platzhalter für Deckblatt hier eintragen!
+
+\newcommand{\Uni}{Technische Universit\"at M\"unchen}
+\newcommand{\fachbereich}{Fakultät f\"ur Informatik}
+\newcommand{\Labor}{}
+\newcommand{\Studiengang}{Robotics, Cognition, Intelligence}
+
+\newcommand{\DeinName}{Michael Grupp}
+\newcommand{\Strasse}{Hiltenspergerstra{\ss}e 67}
+\newcommand{\Stadt}{80796 M\"unchen}
+\newcommand{\MatrikelNummer}{03668066}
+
+\newcommand{\ArtDerArbeit}{Master's Thesis in \Studiengang}
+\newcommand{\TitelArbeit}{Approach for Efficient Procrastination in Robotic Research}
+
+%Zeilenabstand??
+\newcommand{\TitelArbeitFremdsprache}{Verfahren für Effiziente Prokrastination in der Robotik}
+
+\newcommand{\PrueferEins}{Prof. Dr. rer. nat. John Doe}
+\newcommand{\PrueferZwei}{Prof. Dr. Ing. Max Mustermann}
+
+
+% entweder ein Datum händisch eintragen, oder den Befehl \today nutzen
+\newcommand{\Datum}{\today}
+\newcommand{\Ort}{M\"unchen}
+
+
+\makeglossary
+
+
+% Einbinden des Headers, hier können auch weitere Einstellungen vorgenommen werden.
+\input{source/header}
+
+
+% Beginn des Dokuments
+\begin{document}
+
+\frontmatter
+\include{source/Titelseite}
+\include{source/Titelseite_innen}
+
+\include{source/content/EidesstattlicheErklaerung}
+\include{source/content/Abstract}
+\include{source/content/Acknowledgements}
+
+% Einbinden des Inhaltsverzeichnisses
+\tableofcontents 
+
+%Einbinden des Hauptteils
+\mainmatter
+\include{source/content/Introduction}
+\include{source/content/PreviousWork}
+\include{source/content/Basics_Theory}
+\include{source/content/SystemDesign}
+\include{source/content/Experiments}
+\include{source/content/Conclusion}
+
+
+%Einbinden des Abbildungsverzeichnisses
+\backmatter
+%Liste der Tabellen
+\listoftables
+%Einbinden des Tabellenverzeichnisses
+\listoffigures
+%Einbinden des Sourcecodeverzeichnisses
+\lstlistoflistings
+
+% Quellenverzeichnis
+\include{source/bib/literaturverzeichnis}
+
+
+% alle Kapitel nach \appendix landen im Anhang
+\appendix
+
+
+
+\end{document}

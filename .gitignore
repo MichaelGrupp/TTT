@@ -1,0 +1,12 @@
+*.aux
+*.tcp
+*.log
+*.tps
+*.synctex
+*.lof
+*.toc
+*.out
+*.idx
+*.glo
+*.lot
+*.lol

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simulationdevice type="ssa" classfile="virtualmicroclab.simulationdevice.lcd_gfx.lcd_gfx">
+	<parameters>
+		<parameter name="name" type="String" value="lcd_gfx"/>
+	</parameters>
+	<resources>
+	</resources>
+	<inputpins>
+		<pin name="bCLK_PIN" 	id="0" initvalue="false"/>
+		<pin name="bDATA_PIN" 	id="1" initvalue="false"/>
+		<pin name="bDC_PIN"  	id="2" initvalue="false"/>
+		<pin name="bCE_PIN" 	id="3" initvalue="false"/>
+		<pin name="bRST_PIN" 	id="4" initvalue="false"/>
+		<pin name="bEN_PIN" 	id="5" initvalue="false"/>
+		<pin name="bPORT" 	id="6" initvalue="false"/>
+		<pin name="bDDR" 	id="7" initvalue="false"/>
+	</inputpins>
+</simulationdevice>

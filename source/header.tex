@@ -1,0 +1,226 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%																					%
+%	In dieser Datei werden alle Packages eingebunden, 	%
+% welche für das Dokument nötig sind. Desweiteren 		%
+% werden die Dokumentinformationen gesetzt.						%
+%																											%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Die KOMAScript Dokumentklasse "scrbook" verwenden.
+%
+\documentclass[pdftex, 		%
+							a4paper, 		% DIN A4 verwenden
+							titlepage,	% separate Titelseite
+							%draft,			%	Draft-Version, keine Bilder im pdf!
+							final,			% Final-Version
+							twoside,		% einseitiger Druck, zweiseitig: twoside, fancyhdr anpassen!!!!! (siehe unten)
+							12pt,				% Schriftgröße 12pt
+							DIV=calc,
+							%tocbasic,
+							]{scrbook}	%	KOMAScript scrbook-Dokumentklasse
+
+ 
+\usepackage{acronym} %für Abbildungsverzeichnis
+
+
+% Überschriften mit Serifenschrift (auskommentieren wenn nicht gewünscht)
+\setkomafont{disposition}{\normalfont\bfseries}
+
+							
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Einbinden der Pakete 
+% Sprache für Autobezeichnungen (Inhalt, Tabelle... - \usepackage[ngerman]{babel} oder \usepackage[english]{babel} (2x erstellen)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[german=quotes]{csquotes} %Deutsche Anführungszeichen
+\usepackage[left=30mm,right=20mm,top=30mm,bottom=25mm]{geometry}
+
+\usepackage{palatino} 				% Schriftfamilie Palatino
+\usepackage[latin1]{inputenc} % Umlaute					% Bilder im Absatz platzieren
+\usepackage[T1]{fontenc}			% Erweiterten Zeichensatz aktivieren
+\parindent0pt           			% verzichte auf Einrücken der ersten Zeile
+\parskip1ex             			% Abstand zwischen den Absätzen
+
+\usepackage{setspace}					% Paket zum Einstellen des Zeilenabstands
+\onehalfspacing								% anderthalbfacher Zeilenabstand
+%\doublespacing								% doppelter Zeilenabstand
+%\singlespacing								% einfacher Zeilenabstand
+
+
+% PDF Dateien einbinden
+\usepackage{pdfpages}
+%Settings for PDF Pages to accept additonal versioned PDF files
+\pdfminorversion=6
+\pdfcompresslevel=9
+\pdfobjcompresslevel=9
+
+%Vektor Grafiken (eps mit Inkscape z.B.)
+\usepackage{graphicx, color}
+\graphicspath{source/images}
+\usepackage[outdir=./]{epstopdf}
+
+
+%Infos dazu unter: http://www.bakoma-tex.com/doc/latex/koma-script/scrhack.pdf
+%Einige Pakete haben Probleme mit dem Komaskript.
+\usepackage{scrhack} 
+
+
+% Definieren von eigenen benannten Farben.
+% Für spätere Verwendung in dem Dokument, definieren wir einzelne benannte Farben.
+\usepackage{xcolor}
+\definecolor{gray1}{gray}{0.92}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{urlLinkColor}{rgb}{0,0,0.5}
+\definecolor{LinkColor}{rgb}{0,0,0}
+\definecolor{ListingBackground}{rgb}{0.85,0.85,0.85}
+
+\usepackage{color}
+\definecolor{LinkColor}{rgb}{0.1,0.1,0.1}
+%\definecolor{ListingBackground}{rgb}{0.85,0.85,0.85}
+\definecolor{ListingBackground}{rgb}{0.98,0.98,0.98}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+
+\makeindex
+
+
+%-----------Pakete für Positionierung von Grafiken------------------
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+
+\newlength\figureheight 
+\newlength\figurewidth 
+\usepackage{rotating} %für \begin{sidewaysfigure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------Einstellungen für Sourcecode----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[savemem]{listings} %Bei wenig Arbeitsspeicher dies Option [savemem] aktivieren.
+\usepackage{listings}
+\lstloadlanguages{TeX, C++, XML, Matlab, Java} % TeX sprache laden, notwendig wegen option 'savemem'
+\lstset{%
+	language=[LaTeX]TeX,     % Sprache des Quellcodes ist TeX
+	numbers=left,            % Zelennummern links
+	stepnumber=1,            % Jede Zeile nummerieren.
+	numbersep=5pt,           % 5pt Abstand zum Quellcode
+	numberstyle=\tiny,       % Zeichengrösse 'tiny' für die Nummern.
+	breaklines=true,         % Zeilen umbrechen wenn notwendig.
+	breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrücken.
+	postbreak=\space,        % Bei Leerzeichen umbrechen.
+	tabsize=2,               % Tabulatorgrösse 2
+	basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+	showspaces=false,        % Leerzeichen nicht anzeigen.
+	showstringspaces=false,  % Leerzeichen auch in Strings ('') nicht anzeigen.
+	extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+	backgroundcolor=\color{ListingBackground}} % Hintergrundfarbe des Quellcodes setzen.
+
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  %commentstyle=\color{gray}\upshape
+}
+%neue Lang definieren, als Bsp.
+\lstdefinelanguage{XML-changed}
+{
+  basicstyle=\footnotesize\ttfamily\bfseries,
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------Mathe-Packages----------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+%schönere Varianten von argmin und argmax
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
+%bessere Vektordarstellung
+\usepackage{esvect}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------Caption Package-----------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+
+\DeclareCaptionFormat{graphics}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+
+
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={footnotesize}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        TIKZ
+\usepackage{pgfplots}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------Header+Footer-------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}					%
+\pagestyle{fancy}							%
+
+\fancyhead{}
+\fancyfoot{} 
+\renewcommand{\headrulewidth}{0.4pt} % Kopfzeilenlinie
+\renewcommand{\footrulewidth}{0.0pt} % Fusszeilenlinie 0.0pt blendet sie aus
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
+
+% Schriftstil des Headers anpassen - \sffamily für sans serif
+\fancyhead[LO]{\textit{\rightmark}}	
+\fancyhead[RO]{\textit{\thepage}}
+
+%folgendes kommentieren bei einseitigem Druck!!
+\fancyhead[LE]{\textit{\thepage}}	
+\fancyhead[RE]{\textit{\rightmark}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -------Für ToDo-Notes---------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[color=red, shadow]{todonotes} % ", disable" deaktiviert ToDo-Notes
+%Vereinfachtes "Inline-Todo"
+\newcommand{\td}[1]{{\todo[inline]{#1}}}
+\newcommand{\tdu}[1]{{\todo[inline, color=green!40]{#1}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------HyperRef konfigurieren-------für Links---------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+	pdftitle={\TitelArbeit},
+	pdfauthor={\DeinName},
+	pdfsubject={\TitelArbeit},
+	pdfcreator={MiKTeX, LaTeX with hyperref and KOMA-Script auf Basis der Vorlage von Michael Grupp},
+	pdfkeywords={Abschlussarbeit, Thesis},%weitere Keywords hier einfügen
+	pdfpagemode=UseOutlines,%                                  
+	pdfdisplaydoctitle=true,%                                  
+	pdflang=de%                                              
+]{hyperref}
+
+\hypersetup{%
+	colorlinks=true,%        Aktivieren von farbigen Links im Dokument (keine Rahmen)
+	linkcolor=LinkColor,%    Farbe festlegen.
+	citecolor=LinkColor,%    Farbe festlegen.
+	filecolor=LinkColor,%    Farbe festlegen.
+	menucolor=LinkColor,%    Farbe festlegen.
+	urlcolor=LinkColor,%     Farbe von URL's im Dokument.
+	bookmarksnumbered=true%  Überschriftsnummerierung im PDF Inhalt anzeigen.
+}
