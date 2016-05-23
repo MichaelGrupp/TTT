@@ -1,77 +1,84 @@
-%Platzhalter für Deckblatt hier eintragen!
+%%%%%%%%%%%%%%%%%%%
+%  placeholders
+%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\Uni}{Technische Universit\"at M\"unchen}
-\newcommand{\Fakultaet}{Fakultät f\"ur Informatik}
-\newcommand{\Lehrstuhl}{Lehrstuhl für Musterverfahren}
-\newcommand{\Studiengang}{Robotics, Cognition, Intelligence}
+\newcommand{\chair}{Lehrstuhl für Musterverfahren}
+\newcommand{\faculty}{Fakultät für Informatik}
+\newcommand{\uni}{Technische Universität München}
+\newcommand{\studycourse}{Robotics, Cognition, Intelligence}
 
-\newcommand{\DeinName}{Max Mustermann}
-\newcommand{\Strasse}{Musterstra{\ss}e 67}
-\newcommand{\Stadt}{80796 M\"unchen}
-\newcommand{\MatrikelNummer}{03668066}
+\newcommand{\authorname}{Max Mustermann}
+\newcommand{\street}{Musterstraße 67}
+\newcommand{\zip}{80796} \newcommand{\city}{München}
+\newcommand{\imat}{0123456}
 
-\newcommand{\ArtDerArbeit}{Master's Thesis in \Studiengang}
-\newcommand{\TitelArbeit}{Approach for Efficient Procrastination in Robotics Research}
-\newcommand{\TitelArbeitFremdsprache}{Verfahren für Effiziente Prokrastination in der Robotik}
+\newcommand{\worktype}{Master's Thesis in \studycourse}
+\newcommand{\titleFirstLanguage}{Energy-Saving Approaches for Efficient Procrastination in Robotics Research}
+% German & English needed at Department of Informatics
+\newcommand{\titleForeignLanguage}{Energiesparende Verfahren für Effiziente Prokrastination in der Robotik}
 
-\newcommand{\PrueferEins}{Prof. Dr. rer. nat. John Doe}
-\newcommand{\PrueferZwei}{Prof. Dr. Ing. Eva Musterfrau}
+\newcommand{\supervisor}{Prof. Dr. rer. nat. John Doe}
+\newcommand{\advisor}{Dr. Ing. Eva Musterfrau}
 
-
-% entweder ein Datum händisch eintragen, oder den Befehl \today nutzen
-\newcommand{\Datum}{\today}
-\newcommand{\Ort}{M\"unchen}
-
-
-% Einbinden des Headers, hier können auch weitere Einstellungen vorgenommen werden.
-\input{header}
-
-% aus Coroporate Design Vorlage
-\newcommand{\UniversitaetLogoBreite}{19mm}
-\newcommand{\UniversitaetLogoHoehe}{1cm}
-\definecolor{UniversitaetFarbe}{RGB}{0,101,189}
+% set date manually or use \today
+\newcommand{\submissionDate}{\today}
 
 
-% Beginn des Dokuments
+
+%%%%%%%%%%%%%%%%%%%
+%    settings
+%%%%%%%%%%%%%%%%%%%
+
+% quick settings
+\def\printstyle{twoside} % set to {twoside} for printing, else {oneside}
+%\def\monochromeCover{} % uncomment if you prefer a black TUM logo on the cover
+
+% complete settings: see settings.text
+\input{settings} 
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%  main document
+%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 \frontmatter
-\include{Titelseite}
-\include{Titelseite_innen}
+% first part of document before actual content
+
+\include{titlepage}
+\include{titlepage_inside} % needed at Department of Informatics
 
 \include{content/EidesstattlicheErklaerung}
 \include{content/Abstract}
 \include{content/Acknowledgements}
 
-% Einbinden des Inhaltsverzeichnisses
 \tableofcontents 
 
-% Einbinden des Hauptteils
+
 \mainmatter
-\include{content/Introduction}
-\include{content/PreviousWork}
-\include{content/Basics_Theory}
-\include{content/SystemDesign}
-\include{content/Experiments}
-\include{content/Conclusion}
+% include chapter files here or write your text directly here
+
+\include{content/ExampleChapterOne}
+\include{content/ExampleChapterTwo}
 
 
-% Einbinden des Abbildungsverzeichnisses
 \backmatter
-% Liste der Tabellen
-\listoftables
-% Einbinden des Tabellenverzeichnisses
+% optional: list of figures
 \listoffigures
-% Einbinden des Sourcecodeverzeichnisses
+% optional: list of tables
+\listoftables
+% optional: list of source code listings
 \lstlistoflistings
 
-% Quellenverzeichnis
+% your BibTex file
 \bibliography{bib/references.bib}
 
 
-% alle Kapitel nach \appendix landen im Anhang
 \appendix
+% include appendix chapters here
 
-
+\include{content/AppendixExample}
 
 \end{document}

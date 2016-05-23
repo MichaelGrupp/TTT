@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%%%%%%
+% essentials
+%%%%%%%%%%%%%%%%%%%
+
+% use the scrbook KOMA document class
+\documentclass[			pdftex, 		%
+						a4paper, 		% DIN A4 format
+						titlepage,		% separate title page
+						%draft,			% draft version, no figures in PDF!
+						final,			% final version
+						\printstyle ,	% see \def in main document (oneside or twoside)
+						12pt,			% font size
+						DIV=calc,
+						]{scrbook}
+						
+\setkomafont{disposition}{\normalfont\bfseries}
+
+% page geometry
+\def\borderleft{20mm} % constant needed for title page
+\def\borderright{20mm} % constant needed for title page
+\usepackage[left=\borderleft , right=\borderright , top=30mm, bottom=25mm]{geometry}
+
+% typesetting
+\usepackage{palatino} 				% Palatino font with sans-serif \sffamily Helvetica
+\usepackage[latin1]{inputenc} 		% Umlaute
+\usepackage[T1]{fontenc}			% extended character set
+\parindent0pt           			% no indentation of the first line
+\parskip1ex             			% gap between paragraphs
+\usepackage{setspace}				% package for line spacing settings
+%\singlespacing						% 1,0
+\onehalfspacing						% 1,5
+%\doublespacing						% 2,0
+
+% language for automated stuff, like "List of Figures" or "Abbildungsverzeichnis"
+\usepackage[english]{babel}
+%\usepackage[german=quotes]{csquotes} % Deutsche Anführungszeichen
+
+% BibTex
+\usepackage{natbib}
+\bibliographystyle{plain}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% figures & co
+%%%%%%%%%%%%%%%%%%%
+
+% graphics and figures
+\usepackage{graphicx}
+\graphicspath{{images/}} % additional path(s) for loading images
+\usepackage{rotating} % needed for \begin{sidewaysfigure} ... 
+
+% insert PDF files
+\usepackage{pdfpages}
+% settings for PDF Pages to accept additonal versioned PDF files
+\pdfminorversion=6
+\pdfcompresslevel=9
+\pdfobjcompresslevel=9
+
+% define custom colors
+\usepackage{xcolor}
+\definecolor{gray1}{gray}{0.92}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{urlLinkColor}{rgb}{0,0,0.5}
+\definecolor{LinkColor}{rgb}{0,0,0}
+\definecolor{ListingBackground}{rgb}{0.85,0.85,0.85}
+
+\usepackage{color}
+\definecolor{LinkColor}{rgb}{0.1,0.1,0.1}
+\definecolor{ListingBackground}{rgb}{0.98,0.98,0.98}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% layout tools
+%%%%%%%%%%%%%%%%%%%
+
+% for \textblock on title page
+\usepackage[absolute]{textpos}
+%\setlength{\TPHorizModule}{1mm}
+%\setlength{\TPVertModule}{\TPHorizModule}
+
+% TUM Corporate Design definitions taken from official templates (tum.de/cd)
+\newcommand{\UniversitaetLogoBreite}{19mm}
+\newcommand{\UniversitaetLogoHoehe}{1cm}
+\definecolor{UniversitaetFarbe}{RGB}{0,101,189}
+
+% blindtext generator
+\usepackage{lipsum}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% math
+%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+% custom argmin, argmax
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% code listings
+%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+\lstloadlanguages{TeX, C++, XML, Matlab, Java, Python, C} % add languages if needed 
+\lstset{%
+	language=[LaTeX]TeX,     %
+	numbers=left,            % line numbers left
+	stepnumber=1,            % number every line
+	numbersep=5pt,           % distance of line numbers to the code
+	numberstyle=\tiny,       % size of the line numbers
+	breaklines=true,         % break lines if necessary
+	breakautoindent=true,    % indent lines after line breaks
+	postbreak=\space,        % line break at spaces
+	tabsize=2,               % size of tab indentation
+	basicstyle=\small\ttfamily,
+	showspaces=false,        % don't show spaces
+	columns=fullflexible,
+	showstringspaces=false,  % ...also not in 'strings' / "strings"
+	extendedchars=true,      % show all Latin1 chars
+	backgroundcolor=\color{ListingBackground} % background color of the listing
+}
+
+% captions for listings
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={footnotesize}}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% header & footer
+%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{} 
+\renewcommand{\headrulewidth}{0.4pt} % line for header - 0.0pt = no line
+\renewcommand{\footrulewidth}{0.0pt} % line for footer - 0.0pt = no line
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
+
+\fancyhead[LO]{\textit{\rightmark}}	
+\fancyhead[RO]{\textit{\thepage}}
+
+\ifx\printstyle{oneside}\else
+	% adapt footers and headers if two-sided
+	\fancyhead[LE]{\textit{\thepage}}	
+	\fancyhead[RE]{\textit{\rightmark}}
+\fi
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% hyperref
+%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+	pdftitle={\titleFirstLanguage},
+	pdfauthor={\authorname},
+	pdfsubject={\titleFirstLanguage},
+	pdfcreator={MiKTeX, LaTeX with hyperref and KOMA-Script based on template by Michael Grupp ( github.com/MichaelGrupp/TTT )},
+	pdfkeywords={Abschlussarbeit, Thesis, TUM}, 
+	pdfpagemode=UseOutlines,%                                  
+	pdfdisplaydoctitle=true,%                                  
+	pdflang=de%                                              
+]{hyperref}
+
+\hypersetup{%
+	colorlinks=true,%        colored links without border
+	linkcolor=LinkColor,%    
+	citecolor=LinkColor,%    
+	filecolor=LinkColor,%    
+	menucolor=LinkColor,%    
+	urlcolor=LinkColor,%     
+	bookmarksnumbered=true%  
+}

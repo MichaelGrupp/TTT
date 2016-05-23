@@ -1,0 +1,39 @@
+\begin{titlepage}
+
+% Dreizeiler:
+\begin{textblock*}{\textwidth}(\borderleft, 2cm)%        	
+    	\setlength{\baselineskip}{11pt}%
+    	\ifx \monochromeCover \undefined
+        	\textcolor{UniversitaetFarbe} { %
+        	\fontsize{9}{11}\selectfont%
+        	\sffamily \chair\\%
+        	\sffamily \faculty\\%
+        	\sffamily \uni }
+        \else
+        	\textcolor{black} { %
+        	\fontsize{9}{11}\selectfont%
+        	\sffamily \chair\\%
+        	\sffamily \faculty\\%
+        	\sffamily \uni }
+        \fi
+\end{textblock*}%
+
+% TUM logo
+\begin{textblock*}{\UniversitaetLogoBreite}[1,0](\paperwidth - 2cm, 2cm)%
+		\ifx \monochromeCover \undefined
+        	\includegraphics{images/TUM_Logos/TUM_blau.pdf}%
+        \else
+        	\includegraphics{images/TUM_Logos/TUM_schwarz.pdf}%
+        \fi
+\end{textblock*}%
+
+% title text
+\begin{textblock*}{\textwidth - \borderleft}(\borderleft , 6cm)% 
+{\sffamily \Large \worktype}\\
+{\sffamily \huge \titleFirstLanguage \par} %~\\[2mm]
+~\\
+\sffamily \Large \textbf{\authorname}\\
+\end{textblock*}
+
+~\\ % do not remove
+\end{titlepage}
