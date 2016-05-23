@@ -1,0 +1,34 @@
+\begin{titlepage}
+
+% Dreizeiler:
+\begin{textblock*}{\textwidth}(2cm, 1cm)%        	
+    	\setlength{\baselineskip}{11pt}%
+        \textcolor{black} { %
+        \fontsize{9}{11}\selectfont%
+        \sffamily \Lehrstuhl\\%
+        \sffamily \Fakultaet\\%
+        \sffamily \Uni }
+\end{textblock*}%
+
+% TUM Logo
+\begin{textblock*}{\UniversitaetLogoBreite}[1,0](\paperwidth - 1cm, 1cm)%
+        \includegraphics{images/TUM_Logos/TUM_schwarz.pdf}%
+\end{textblock*}%
+
+% Titel in 2 Sprachen mit detaillierten Infos
+\begin{textblock*}{\textwidth - 2cm}(2cm, 6cm)% 
+{\sffamily \Large \ArtDerArbeit}\\
+{\sffamily \huge \TitelArbeit \par}
+{\sffamily \huge \TitelArbeitFremdsprache \par}
+~\\
+\begin{tabular}{l l}
+\sffamily Author: & \sffamily \textbf{\DeinName}\\
+\sffamily Supervisor: & \sffamily \PrueferEins \\
+\sffamily Advisor: & \sffamily \PrueferZwei \\
+\sffamily Submission Date: & \sffamily \Datum
+\end{tabular}
+\end{textblock*}
+
+~\\ % nicht entfernen
+
+\end{titlepage}

@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %																					%
 %	In dieser Datei werden alle Packages eingebunden, 	%
-% welche für das Dokument nötig sind. Desweiteren 		%
+% welche fÃ¼r das Dokument nÃ¶tig sind. Desweiteren 		%
 % werden die Dokumentinformationen gesetzt.						%
 %																											%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,38 +14,40 @@
 							%draft,			%	Draft-Version, keine Bilder im pdf!
 							final,			% Final-Version
 							twoside,		% einseitiger Druck, zweiseitig: twoside, fancyhdr anpassen!!!!! (siehe unten)
-							12pt,				% Schriftgröße 12pt
+							12pt,				% SchriftgrÃ¶ÃŸe 12pt
 							DIV=calc,
 							%tocbasic,
 							]{scrbook}	%	KOMAScript scrbook-Dokumentklasse
 
  
-\usepackage{acronym} %für Abbildungsverzeichnis
+\usepackage{acronym} %fÃ¼r Abbildungsverzeichnis
 
+\bibliographystyle{plain}
 
-% Überschriften mit Serifenschrift (auskommentieren wenn nicht gewünscht)
+% Ãœberschriften mit Serifenschrift (auskommentieren wenn nicht gewÃ¼nscht)
 \setkomafont{disposition}{\normalfont\bfseries}
 
 							
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Einbinden der Pakete 
-% Sprache für Autobezeichnungen (Inhalt, Tabelle... - \usepackage[ngerman]{babel} oder \usepackage[english]{babel} (2x erstellen)
+% Sprache fÃ¼r Autobezeichnungen (Inhalt, Tabelle... - \usepackage[ngerman]{babel} oder \usepackage[english]{babel} (2x erstellen)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[english]{babel}
-\usepackage[german=quotes]{csquotes} %Deutsche Anführungszeichen
-\usepackage[left=30mm,right=20mm,top=30mm,bottom=25mm]{geometry}
+%\usepackage[german=quotes]{csquotes} %Deutsche AnfÃ¼hrungszeichen
+\usepackage[left=20mm,right=20mm,top=30mm,bottom=25mm]{geometry}
 
 \usepackage{palatino} 				% Schriftfamilie Palatino
 \usepackage[latin1]{inputenc} % Umlaute					% Bilder im Absatz platzieren
 \usepackage[T1]{fontenc}			% Erweiterten Zeichensatz aktivieren
-\parindent0pt           			% verzichte auf Einrücken der ersten Zeile
-\parskip1ex             			% Abstand zwischen den Absätzen
+\parindent0pt           			% verzichte auf EinrÃ¼cken der ersten Zeile
+\parskip1ex             			% Abstand zwischen den AbsÃ¤tzen
 
 \usepackage{setspace}					% Paket zum Einstellen des Zeilenabstands
 \onehalfspacing								% anderthalbfacher Zeilenabstand
 %\doublespacing								% doppelter Zeilenabstand
 %\singlespacing								% einfacher Zeilenabstand
 
+\usepackage{xcolor} % Farbdefinitionen
 
 % PDF Dateien einbinden
 \usepackage{pdfpages}
@@ -56,7 +58,7 @@
 
 %Vektor Grafiken (eps mit Inkscape z.B.)
 \usepackage{graphicx, color}
-\graphicspath{source/images}
+\graphicspath{images}
 \usepackage[outdir=./]{epstopdf}
 
 
@@ -66,7 +68,7 @@
 
 
 % Definieren von eigenen benannten Farben.
-% Für spätere Verwendung in dem Dokument, definieren wir einzelne benannte Farben.
+% FÃ¼r spÃ¤tere Verwendung in dem Dokument, definieren wir einzelne benannte Farben.
 \usepackage{xcolor}
 \definecolor{gray1}{gray}{0.92}
 \definecolor{darkgreen}{rgb}{0,0.5,0}
@@ -86,18 +88,18 @@
 \makeindex
 
 
-%-----------Pakete für Positionierung von Grafiken------------------
+%-----------Pakete fÃ¼r Positionierung von Grafiken------------------
 \usepackage[absolute]{textpos}
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{\TPHorizModule}
 
 \newlength\figureheight 
 \newlength\figurewidth 
-\usepackage{rotating} %für \begin{sidewaysfigure}
+\usepackage{rotating} %fÃ¼r \begin{sidewaysfigure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-----------Einstellungen für Sourcecode----------------
+%-----------Einstellungen fÃ¼r Sourcecode----------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[savemem]{listings} %Bei wenig Arbeitsspeicher dies Option [savemem] aktivieren.
 \usepackage{listings}
@@ -107,12 +109,12 @@
 	numbers=left,            % Zelennummern links
 	stepnumber=1,            % Jede Zeile nummerieren.
 	numbersep=5pt,           % 5pt Abstand zum Quellcode
-	numberstyle=\tiny,       % Zeichengrösse 'tiny' für die Nummern.
+	numberstyle=\tiny,       % ZeichengrÃ¶sse 'tiny' fÃ¼r die Nummern.
 	breaklines=true,         % Zeilen umbrechen wenn notwendig.
-	breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrücken.
+	breakautoindent=true,    % Nach dem Zeilenumbruch Zeile einrÃ¼cken.
 	postbreak=\space,        % Bei Leerzeichen umbrechen.
-	tabsize=2,               % Tabulatorgrösse 2
-	basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+	tabsize=2,               % TabulatorgrÃ¶sse 2
+	basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein fÃ¼r den Quellcode
 	showspaces=false,        % Leerzeichen nicht anzeigen.
 	showstringspaces=false,  % Leerzeichen auch in Strings ('') nicht anzeigen.
 	extendedchars=true,      % Alle Zeichen vom Latin1 Zeichensatz anzeigen.
@@ -143,7 +145,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amssymb}
 \usepackage{amsmath}
-%schönere Varianten von argmin und argmax
+%schÃ¶nere Varianten von argmin und argmax
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
 %bessere Vektordarstellung
@@ -181,7 +183,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\quad#1}}
 
-% Schriftstil des Headers anpassen - \sffamily für sans serif
+% Schriftstil des Headers anpassen - \sffamily fÃ¼r sans serif
 \fancyhead[LO]{\textit{\rightmark}}	
 \fancyhead[RO]{\textit{\thepage}}
 
@@ -192,7 +194,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -------Für ToDo-Notes---------------------------------
+% -------FÃ¼r ToDo-Notes---------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[color=red, shadow]{todonotes} % ", disable" deaktiviert ToDo-Notes
 %Vereinfachtes "Inline-Todo"
@@ -202,14 +204,14 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%--------HyperRef konfigurieren-------für Links---------
+%--------HyperRef konfigurieren-------fÃ¼r Links---------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[
 	pdftitle={\TitelArbeit},
 	pdfauthor={\DeinName},
 	pdfsubject={\TitelArbeit},
 	pdfcreator={MiKTeX, LaTeX with hyperref and KOMA-Script auf Basis der Vorlage von Michael Grupp},
-	pdfkeywords={Abschlussarbeit, Thesis},%weitere Keywords hier einfügen
+	pdfkeywords={Abschlussarbeit, Thesis},%weitere Keywords hier einfÃ¼gen
 	pdfpagemode=UseOutlines,%                                  
 	pdfdisplaydoctitle=true,%                                  
 	pdflang=de%                                              
@@ -222,5 +224,5 @@
 	filecolor=LinkColor,%    Farbe festlegen.
 	menucolor=LinkColor,%    Farbe festlegen.
 	urlcolor=LinkColor,%     Farbe von URL's im Dokument.
-	bookmarksnumbered=true%  Überschriftsnummerierung im PDF Inhalt anzeigen.
+	bookmarksnumbered=true%  Ãœberschriftsnummerierung im PDF Inhalt anzeigen.
 }
