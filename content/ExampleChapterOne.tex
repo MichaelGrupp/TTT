@@ -6,12 +6,12 @@
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{Sternenhimmel.jpg}
+\includegraphics[width=0.8\textwidth]{aurora.jpg}
 \caption{A figure with a caption}
-\label{fig:Sternenhimmel}
+\label{fig:aurora}
 \end{figure}
 
-Figure \ref{fig:Sternenhimmel} shows a picture.
+Figure \ref{fig:aurora} shows a picture.
 
 Citation of a book \cite{hartley2004}.
 
@@ -19,8 +19,17 @@ Citation of a book \cite{hartley2004}.
 
 \subsection{Subsection Two}
 
+\begin{figure}
+\centering
+\input{images/plot.tikz}
+\caption{A tikz plot with a caption}
+\label{fig:plot}
+\end{figure}
+
+Figure \ref{fig:plot} shows a plot generated with tikz and pgfplots.
+
 \lipsum[4-5]
 
 \section{Another Section}
 
-\lipsum[6-9]
+\lipsum[6-12]

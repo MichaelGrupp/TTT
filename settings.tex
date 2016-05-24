@@ -9,16 +9,16 @@
 						%draft,			% draft version, no figures in PDF!
 						final,			% final version
 						\printstyle ,	% see \def in main document (oneside or twoside)
-						12pt,			% font size
+						11pt,			% font size
 						DIV=calc,
 						]{scrbook}
 						
 \setkomafont{disposition}{\normalfont\bfseries}
+\usepackage{scrhack}
 
-% page geometry
-\def\borderleft{20mm} % constant needed for title page
-\def\borderright{20mm} % constant needed for title page
-\usepackage[left=\borderleft , right=\borderright , top=30mm, bottom=25mm]{geometry}
+% page geometry - define custom if needed...
+\def\coverborderleft{30mm} % needed for title page
+%\usepackage[left=\borderleft , right=\borderright , top=30mm, bottom=25mm]{geometry}
 
 % typesetting
 \usepackage{palatino} 				% Palatino font with sans-serif \sffamily Helvetica
@@ -27,8 +27,8 @@
 \parindent0pt           			% no indentation of the first line
 \parskip1ex             			% gap between paragraphs
 \usepackage{setspace}				% package for line spacing settings
-%\singlespacing						% 1,0
-\onehalfspacing						% 1,5
+\singlespacing						% 1,0
+%\onehalfspacing						% 1,5
 %\doublespacing						% 2,0
 
 % language for automated stuff, like "List of Figures" or "Abbildungsverzeichnis"
@@ -46,7 +46,7 @@
 %%%%%%%%%%%%%%%%%%%
 
 % graphics and figures
-\usepackage{graphicx}
+\usepackage{graphicx, tikz, pgfplots}
 \graphicspath{{images/}} % additional path(s) for loading images
 \usepackage{rotating} % needed for \begin{sidewaysfigure} ... 
 
@@ -91,6 +91,8 @@
 % blindtext generator
 \usepackage{lipsum}
 
+% advanced conditionals
+\usepackage{pdftexcmds}
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -154,7 +156,8 @@
 \fancyhead[LO]{\textit{\rightmark}}	
 \fancyhead[RO]{\textit{\thepage}}
 
-\ifx\printstyle{oneside}\else
+\def\twoside{twoside} % macro needed
+\ifx \printstyle \twoside
 	% adapt footers and headers if two-sided
 	\fancyhead[LE]{\textit{\thepage}}	
 	\fancyhead[RE]{\textit{\rightmark}}
