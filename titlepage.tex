@@ -1,7 +1,7 @@
 \begin{titlepage}
 
 % Dreizeiler:
-\begin{textblock*}{\textwidth}(\borderleft, 2cm)%        	
+\begin{textblock*}{\textwidth}(\coverborderleft, 2cm)%        	
     	\setlength{\baselineskip}{11pt}%
     	\ifx \monochromeCover \undefined
         	\textcolor{UniversitaetFarbe} { %
@@ -28,7 +28,8 @@
 \end{textblock*}%
 
 % title text
-\begin{textblock*}{\textwidth - \borderleft}(\borderleft , 6cm)% 
+\begin{textblock*}{\paperwidth - \coverborderleft - 2cm}(\coverborderleft , 6cm)% 
+\raggedright %no hyphenation here
 {\sffamily \Large \worktype}\\
 {\sffamily \huge \titleFirstLanguage \par} %~\\[2mm]
 ~\\

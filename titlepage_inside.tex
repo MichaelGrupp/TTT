@@ -1,7 +1,7 @@
 \begin{titlepage}
 
 % Dreizeiler:
-\begin{textblock*}{\textwidth}(\borderleft, 2cm)%        	
+\begin{textblock*}{\textwidth}(\coverborderleft, 2cm)%        	
     	\setlength{\baselineskip}{11pt}%
         \textcolor{black} { %
         \fontsize{9}{11}\selectfont%
@@ -16,13 +16,14 @@
 \end{textblock*}%
 
 % title in German and English with additional infos
-\begin{textblock*}{\textwidth - \borderleft}(\borderleft, 6cm)% 
+\begin{textblock*}{\paperwidth - \coverborderleft -2cm}(\coverborderleft, 6cm)% 
+\raggedright %no hyphenation here
 {\sffamily \Large \worktype}\\
 {\sffamily \huge \titleFirstLanguage \par}
 ~\\
 {\sffamily \huge \titleForeignLanguage \par}
 \end{textblock*}
-\begin{textblock*}{\textwidth - \borderleft}(\borderleft, \paperheight - 5cm)% 
+\begin{textblock*}{\paperwidth - \coverborderleft - 2cm}(\coverborderleft, \paperheight - 5cm)% 
 \begin{tabular}{l l}
 \sffamily Author: & \sffamily \textbf{\authorname}\\
 \sffamily Supervisor: & \sffamily \supervisor \\
