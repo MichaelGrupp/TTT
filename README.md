@@ -7,8 +7,8 @@ Inofficial LaTeX template inspired by the new TUM Corporate Design. For theses, 
 
 ## Installation
 
-Download via...
-* the .zip file from GitHub
+Download the template folder via...
+* the .zip file from GitHub (green download button)
 * or `git clone`
 
 ## Usage
