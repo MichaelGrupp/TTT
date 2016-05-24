@@ -15,6 +15,11 @@ Figure \ref{fig:aurora} shows a picture.
 
 Citation of a book \cite{hartley2004}.
 
+Let $x$ and $u$ be variables, then:
+\begin{equation}
+\frac{d}{dx} \left( \int_{0}^{x} f(u)\,du \right) = f(x) ~.
+\end{equation}
+
 \lipsum[1-2]
 
 \subsection{Subsection Two}
@@ -31,5 +36,18 @@ Figure \ref{fig:plot} shows a plot generated with tikz and pgfplots.
 \lipsum[4-5]
 
 \section{Another Section}
+
+\begin{table}
+\centering
+\begin{tabular}{ l | c || r }
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+\caption{A table with numbers}
+\label{tab:numbers}
+\end{table}
+
+Numbers are shown in table \ref{tab:numbers}
 
 \lipsum[6-12]
