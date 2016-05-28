@@ -2,7 +2,7 @@
 
 // Hauptfunktion
 int main(){                                             
-    std::cout << "Hallo, du schöne Welt!" << std::endl;
+    std::cout << "hello world" << std::endl;
 
-    return 0;                                           
+    return EXIT_SUCCESS;                                           
 }
