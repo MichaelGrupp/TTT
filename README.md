@@ -19,4 +19,4 @@ Download the template folder via...
 * if required, adapt the `settings.tex` file  
 * add your own chapters
 
-This template was tested with Texmaker & Tex Live on Windows and Sharelatex (sharelatex.com).
+This template was tested with Texmaker on Linux & Tex Live on Windows and Sharelatex (sharelatex.com).
