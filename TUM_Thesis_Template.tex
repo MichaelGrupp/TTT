@@ -2,7 +2,9 @@
 %  placeholders
 %%%%%%%%%%%%%%%%%%%
 
-\newcommand{\chair}{Lehrstuhl f\"ur Musterverfahren}
+% chair name not allowed at Department of Informatics
+% remove \phantom{} if you want the chair name on the cover
+\newcommand{\chair}{\phantom{Lehrstuhl f\"ur Musterverfahren}}
 \newcommand{\faculty}{Fakult\"at f\"ur Informatik}
 \newcommand{\uni}{Technische Universit\"at M\"unchen}
 \newcommand{\studycourse}{Robotics, Cognition, Intelligence}
@@ -30,6 +32,7 @@
 % quick settings
 \def\printstyle{oneside} % set to {twoside} for printing, else {oneside}
 %\def\monochromeCover{} % uncomment if you prefer a black TUM logo on the cover
+\def\monochromeCoverInside{} % uncomment if you prefer a black TUM logo on the inside cover page
 
 % complete settings: see settings.text
 \input{settings} 

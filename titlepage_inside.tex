@@ -3,31 +3,43 @@
 % Dreizeiler:
 \begin{textblock*}{\textwidth}(\coverborderleft, 2cm)%        	
     	\setlength{\baselineskip}{11pt}%
-        \textcolor{black} { %
-        \fontsize{9}{11}\selectfont%
-        \sffamily \chair\\%
-        \sffamily \faculty\\%
-        \sffamily \uni }
+    	\ifx \monochromeCoverInside \undefined
+        	\textcolor{UniversitaetFarbe} { %
+        	\fontsize{9}{11}\selectfont%
+        	\sffamily \chair\\%
+        	\sffamily \faculty\\%
+        	\sffamily \uni }
+    \else
+        	\textcolor{black} { %
+        	\fontsize{9}{11}\selectfont%
+        	\sffamily \chair\\%
+        	\sffamily \faculty\\%
+        	\sffamily \uni }
+    \fi
 \end{textblock*}%
 
 % TUM logo
 \begin{textblock*}{\UniversitaetLogoBreite}[1,0](\paperwidth - 2cm, 2cm)%
-        \includegraphics{images/TUM_Logos/TUM_schwarz.pdf}%
+		\ifx \monochromeCoverInside \undefined
+        	\includegraphics{images/TUM_Logos/TUM_blau.pdf}%
+        \else
+        	\includegraphics{images/TUM_Logos/TUM_schwarz.pdf}%
+        \fi
 \end{textblock*}%
 
 % title in German and English with additional infos
-\begin{textblock*}{\paperwidth - \coverborderleft -2cm}(\coverborderleft, 6cm)% 
+\begin{textblock*}{\paperwidth - \coverborderleft -2cm}(\coverborderleft, 8cm)% 
 \raggedright %no hyphenation here
 {\sffamily \Large \worktype}\\
 {\sffamily \huge \titleFirstLanguage \par}
-~\\
+\vspace{1cm}
 {\sffamily \huge \titleForeignLanguage \par}
 \end{textblock*}
 \begin{textblock*}{\paperwidth - \coverborderleft - 2cm}(\coverborderleft, \paperheight - 5cm)% 
 \begin{tabular}{l l}
-\sffamily Author: & \sffamily \textbf{\authorname}\\
+\sffamily Author: & \sffamily \authorname \\
 \sffamily Supervisor: & \sffamily \supervisor \\
-\sffamily Advisor: & \sffamily \advisor \\
+\sffamily Advisors: & \sffamily \advisor \\
 \sffamily Submission Date: & \sffamily \submissionDate
 \end{tabular}
 \end{textblock*}
