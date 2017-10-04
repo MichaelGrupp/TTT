@@ -1,6 +1,6 @@
 # TUM Thesis Template
 
-Inofficial LaTeX template with a cover inspired by the new TUM Corporate Design - i.e. minimalistic typography with Helvetica font. For theses, seminars, homeworks etc at TU München.
+Inofficial LaTeX template with a cover inspired by the new TUM Corporate Design - i.e. minimalistic typography with sans-serif Helvetica font. The default serif font for the content part is Palatino, with a slightly wider column width than the vanilla LaTeX book class. For theses, seminars, homeworks etc at TU München.
 
 [PDF preview](https://github.com/MichaelGrupp/TTT/raw/master/TUM_Thesis_Template.pdf "PDF preview")
 
