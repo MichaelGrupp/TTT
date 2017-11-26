@@ -3,15 +3,15 @@
 %%%%%%%%%%%%%%%%%%%
 
 % use the scrbook KOMA document class
-\documentclass[			pdftex, 		%
-						a4paper, 		% DIN A4 format
-						titlepage,		% separate title page
-						%draft,			% draft version, no figures in PDF!
-						final,			% final version
-						\printstyle ,	% see \def in main document (oneside or twoside)
-						11pt,			% font size
-						DIV=calc,
-						]{scrbook}
+\documentclass[	pdftex, 		%
+		a4paper, 		% DIN A4 format
+		titlepage,		% separate title page
+		%draft,			% draft version, no figures in PDF!
+		final,			% final version
+		\printstyle ,		% see \def in main document (oneside or twoside)
+		11pt,			% font size
+		DIV=calc,
+]{scrbook}
 						
 \setkomafont{disposition}{\normalfont\bfseries}
 \usepackage{scrhack}
@@ -22,14 +22,14 @@
 
 % typesetting
 \usepackage{palatino} 				% Palatino font with sans-serif \sffamily Helvetica
-\usepackage[utf8]{inputenc} 		% Umlaute
+\usepackage[utf8]{inputenc} 			% Umlaute
 \usepackage[T1]{fontenc}			% extended character set
 \parindent0pt           			% no indentation of the first line
 \parskip1ex             			% gap between paragraphs
 \usepackage{setspace}				% package for line spacing settings
-\singlespacing						% 1,0
-%\onehalfspacing						% 1,5
-%\doublespacing						% 2,0
+\singlespacing					% 1,0
+%\onehalfspacing				% 1,5
+%\doublespacing					% 2,0
 
 % language for automated stuff, like "List of Figures" or "Abbildungsverzeichnis"
 \usepackage[english]{babel}
